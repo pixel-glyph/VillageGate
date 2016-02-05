@@ -6,8 +6,10 @@
 	height: 90px
 	background-color: #cbcbcb
 
-	h2
+	h1
 		margin: 0 0 0 25px
+		font-family: "Pacifico", sans-serif
+		font-weight: 500
 		color: #333
 
 	.mobile-nav-toggle
@@ -49,27 +51,29 @@
 		display: none
 
 
-	@media (min-width: 750px)
+	@media (min-width: 775px)
 
 		.mobile-nav-toggle
 			display: none
 
 		.site-nav
 			display: initial
-			width: 540px
+			width: 495px
 			margin: 0 0 0 auto
-			padding-top: 20px
-			font-size: 0
+			padding: 5px 3rem 0 0
+			font-family: "Josefin Sans"
+			font-weight: 600
+			font-size: 1.9rem
 
 			ul
 				display: flex
+				padding: 0
 
 				li
 					list-style-type: none
 					color: #000
 
 					a
-						font-size: 16px
 						text-decoration: none
-						margin: 0 10px
+						margin: 0 9px
 						color: inherit
