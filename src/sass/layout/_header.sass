@@ -1,5 +1,75 @@
 
-header
+.home-header
+	display: flex
+	align-items: center
 	width: 100%
-	height: 400px
-	background-color: rgba(132,132,132,0.4)
+	height: 90px
+	background-color: #cbcbcb
+
+	h2
+		margin: 0 0 0 25px
+		color: #333
+
+	.mobile-nav-toggle
+		display: flex
+		align-items: center
+		width: 40px
+		height: 40px
+		margin: 0 20px 0 auto
+
+		span,
+		span::before,
+		span::after
+			content: ""
+			display: block
+			position: relative
+			width: 40px
+			height: 3px
+			background: #333
+			transition: all 0.2s ease-in-out
+
+		span::before
+			top: -12px
+
+		span::after
+			top: 9px
+
+		&:hover span
+			background: transparent
+
+		&:hover span::before
+			transform: rotate(45deg)
+			top: 0
+
+		&:hover span::after
+			transform: rotate(-45deg)
+			top: -3px
+
+	.site-nav
+		display: none
+
+
+	@media (min-width: 750px)
+
+		.mobile-nav-toggle
+			display: none
+
+		.site-nav
+			display: initial
+			width: 540px
+			margin: 0 0 0 auto
+			padding-top: 20px
+			font-size: 0
+
+			ul
+				display: flex
+
+				li
+					list-style-type: none
+					color: #000
+
+					a
+						font-size: 16px
+						text-decoration: none
+						margin: 0 10px
+						color: inherit
