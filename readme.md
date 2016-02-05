@@ -1,3 +1,3 @@
-#Village Gate#
+##Village Gate##
 
-A website for the Village Gate mall in Rochester, NY
+A concept site for the Village Gate Square in Rochester, NY

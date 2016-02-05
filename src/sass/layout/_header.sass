@@ -2,11 +2,14 @@
 .home-header
 	display: flex
 	align-items: center
+	justify-content: space-around
 	width: 100%
 	height: 90px
 	background-color: #cbcbcb
 
 	h1
+		width: 224px
+		height: 53px
 		margin: 0 0 0 25px
 		font-family: "Pacifico", sans-serif
 		font-weight: 500
@@ -47,8 +50,27 @@
 			transform: rotate(-45deg)
 			top: -3px
 
-	.site-nav
+
+	.wide-nav
 		display: none
+		width: 450px
+		padding: 5px 0 0
+		font-family: "Josefin Sans"
+		font-weight: 600
+		font-size: 2rem
+
+		ul
+			display: flex
+			padding: 0
+
+			li
+				list-style-type: none
+				color: #000
+
+				a
+					text-decoration: none
+					margin: 0 10px
+					color: inherit
 
 
 	@media (min-width: 775px)
@@ -56,24 +78,5 @@
 		.mobile-nav-toggle
 			display: none
 
-		.site-nav
+		.wide-nav
 			display: initial
-			width: 495px
-			margin: 0 0 0 auto
-			padding: 5px 3rem 0 0
-			font-family: "Josefin Sans"
-			font-weight: 600
-			font-size: 1.9rem
-
-			ul
-				display: flex
-				padding: 0
-
-				li
-					list-style-type: none
-					color: #000
-
-					a
-						text-decoration: none
-						margin: 0 9px
-						color: inherit
