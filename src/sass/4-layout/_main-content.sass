@@ -10,14 +10,14 @@
     background:
       image: url(/../img/home-top.jpg)
       size: cover
-      position: center
+      position: right
       attachment: fixed
 
   .logo
     position: absolute
     top: 15%
     left: 20%
-    font-family: $font-pac
+    font-family: "Pacifico", cursive
     font-size: 5rem
     color: #eee
     text-shadow: -2px 1px 5px #000
@@ -29,11 +29,27 @@
   .new
     width: 100%
     height: 1000px
-    background-color: #e9e2c0
+    background-color: $home-red
     z-index: 3
+
+    .new-heading
+      width: 250px
+      margin: 0 0 0 15%
+      padding: 50px 0 30px
+      font-family: "Josefin Sans", sans-serif
+      color: $header-white
+      text-shadow: -1px 1px 3px #000
 
     ul
       margin: 0
+      padding: 0 30px
+      list-style-type: none
+      color: $header-white
+      font-family: "Josefin Sans", sans-serif
+      font-size: 1.8rem
+
+      .biz
+        margin: 40px 0
 
       p
         margin: 0
@@ -49,3 +65,7 @@
 
     .logo
       font-size: 8rem
+
+    .top-img
+      background:
+        position: center
