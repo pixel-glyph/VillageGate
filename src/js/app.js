@@ -22,8 +22,8 @@ $(window).scroll(function(){
   }
 
   // scroll more than delta
-	if (Math.abs(lastScrollTop - st) <= delta)
-		return;
+	//if (Math.abs(lastScrollTop - st) <= delta)
+		//return;
 
 	// If scrolling down and past navbar
 	if (st > lastScrollTop && st > navbarHeight) {
