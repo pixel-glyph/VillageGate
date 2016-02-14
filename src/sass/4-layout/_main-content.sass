@@ -45,7 +45,7 @@
       margin: 0 auto
       width: 18rem
 
-    ul
+    .new-biz
       margin: 0
       padding: 0 30px
       list-style-type: none
@@ -55,12 +55,23 @@
       .biz
         margin: 70px 0
         text-align: center
+        opacity: 0
+        transform: translateY(60px)
+        transition: all 0.5s ease-in-out
+
+        &.is-showing
+          opacity: 1
+          transform: translateX(0px)
 
         a
           text-align: center
 
+        img
+          width: 200px
+
         p
-          margin: 25px 0 0
+          max-width: 350px
+          margin: 25px auto 0
           text-align: left
 
   @media (min-width: 500px)

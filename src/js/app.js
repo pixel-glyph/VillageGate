@@ -4,13 +4,14 @@ let st,
     didScroll,
     lastScrollTop = 0,
     delta = 5,
+    isPassed = false,
     navbarHeight = $('.home-header').outerHeight();
 
 $(window).scroll(function(){
   //didScroll = true;
   st = $(this).scrollTop();
 
-  if (st < 800) {
+  if (st < $('.new').offset().top) {
     $('.top-img').css({
       'transform': 'traslate(0, 20%)'
     });
@@ -20,6 +21,13 @@ $(window).scroll(function(){
       'opacity': 1 - (st / 750)
     });
   }
+
+
+  $('.biz').each(function(index, el) {
+    if (st > $(el).offset().top - ($(window).height() / 1.1))
+      $(el).addClass('is-showing');
+  });
+
 
   // scroll more than delta
 	//if (Math.abs(lastScrollTop - st) <= delta)
