@@ -75,7 +75,7 @@ gulp.task('browserSync', function() {
         server: {
             baseDir: "./public/"
         },
-        notify: false
+        notify: false,
     });
 });
 

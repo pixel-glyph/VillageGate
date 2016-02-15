@@ -24,7 +24,7 @@ $(window).scroll(function(){
 
 
   $('.biz').each(function(index, el) {
-    if (st > $(el).offset().top - ($(window).height() / 1.1))
+    if (st > $(el).offset().top - ($(window).height() / 1.2))
       $(el).addClass('is-showing');
   });
 
