@@ -12,15 +12,16 @@ $(window).scroll(function(){
   st = $(this).scrollTop();
 
   if (st < $('.new').offset().top) {
-    $('.top-img').css({
-      'transform': 'traslate(0, 20%)'
-    });
-
     $('.logo').css({
-      'transform': 'translate(0,' + st /6.5 + '%)',
+      'transform': 'translate(0,' + st / 6.5 + '%)',
       'opacity': 1 - (st / 750)
     });
   }
+  // else if (st > 1600) {
+  //   $('.quote-img').css({
+  //     'background-position': '50% ' + st / -5 + 'px'
+  //   });
+  // }
 
 
   $('.biz').each(function(index, el) {
