@@ -13,7 +13,7 @@
 
 	.nav-logo
 		visibility: hidden
-		width: 290px
+		width: 265px
 		height: 53px
 		margin: 8px 0 0 25px
 		font-family: "Pacifico", cursive
@@ -59,11 +59,10 @@
 
 	.wide-nav
 		display: none
-		width: 450px
-		padding: 5px 0 0
+		width: 500px
 		font-family: "Josefin Sans", sans-serif
 		font-weight: 600
-		font-size: 2rem
+		font-size: 2.2rem
 
 		ul
 			display: flex
@@ -75,24 +74,30 @@
 
 				a
 					text-decoration: none
-					margin: 0 10px
+					margin: 0 1rem
 					color: inherit
 
+
+
 	@media (min-width: 775px)
-
-		.nav-logo
-			font-size: 3.2rem
-			margin-top: 0
-
-
 		.mobile-nav-toggle
 			display: none
 
 		.wide-nav
 			display: initial
 
+	@media (min-width: 1000px)
+		.nav-logo
+			margin-top: 0
+			font-size: 3.2rem
+
+		.wide-nav
+			font-size: 2.4rem
+			.nav-link
+				margin: 0 1.3rem
 
 
+//------ DYNAMICALLY ADDED CLASSES -------
 .on-screen
 	position: fixed
 	background-color: rgba(43, 43, 43, 1)

@@ -82,7 +82,7 @@
     transition: all 0.2s ease-out
     background:
       image: url(/../img/wall-art.jpg)
-      position: center
+      position: center 100px
       repeat: no-repeat
       size: cover
       attachment: fixed
@@ -154,4 +154,12 @@
         position: 88%
 
       .logo
+        // left: 20%
         font-size: 8rem
+
+  @media (min-width: 1200px)
+    .top-img
+      .logo
+        top: 37%
+        left: 20%
+        font-size: 9.5rem

@@ -2,13 +2,14 @@
 const $ = require('jquery');
 let st,
     lastScrollTop = 0,
-    delta = 5,
     isPassed = false,
-    navbarHeight = $('.home-header').outerHeight();
+    navbarHeight = $('.home-header').outerHeight(),
+    $header = $('.home-header');
 
-$(window).scroll(function(){
+$(window).scroll(function() {
   st = $(this).scrollTop();
 
+  // translate and fade logo until top-img has scrolled by
   if (st < $('.new').offset().top) {
     $('.logo').css({
       'transform': 'translate(0,' + st / 6.5 + '%)',
@@ -16,35 +17,32 @@ $(window).scroll(function(){
     });
   }
 
+  // parallax scroll effect on quote-img
   if (st > $('.quote-img').offset().top - $(window).height()) {
     $('.quote-img').css({
       'background-position': 'center ' + -(st-2100)/5 + 'px'
     });
   }
 
-
-  $('.biz').each(function(index, el) {
+  // land biz elems on page when they are scrolled 20% into the window
+  $('.biz').each( (index, el) => {
     if (st > $(el).offset().top - ($(window).height() / 1.2))
       $(el).addClass('is-showing');
   });
 
-
-  // scroll more than delta
-	//if (Math.abs(lastScrollTop - st) <= delta)
-		//return;
-
-	// If scrolling down and past navbar
+	// Keep navbar hidden when scrolling down
 	if (st > lastScrollTop && st > navbarHeight) {
-		$('.home-header').addClass('nav-up');
+		$header.addClass('nav-up');
 	} else {
-    // Top of page
+    // When scrolled to top of page, hide header logo
+    // and clear background color
     if (st === 0) {
-      $('.home-header').removeClass('on-screen');
-      $('.home-header').removeClass('nav-up');
+      $header.removeClass('on-screen');
+      $header.removeClass('nav-up');
       // Scroll Up
     } else if (st + $(window).height() < $(document).height() && st > navbarHeight) {
-      $('.home-header').addClass('on-screen');
-      $('.home-header').removeClass('nav-up');
+      $header.addClass('on-screen');
+      $header.removeClass('nav-up');
     }
 	}
 
