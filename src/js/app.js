@@ -1,14 +1,12 @@
 
 const $ = require('jquery');
 let st,
-    didScroll,
     lastScrollTop = 0,
     delta = 5,
     isPassed = false,
     navbarHeight = $('.home-header').outerHeight();
 
 $(window).scroll(function(){
-  //didScroll = true;
   st = $(this).scrollTop();
 
   if (st < $('.new').offset().top) {
@@ -17,11 +15,12 @@ $(window).scroll(function(){
       'opacity': 1 - (st / 750)
     });
   }
-  // else if (st > 1600) {
-  //   $('.quote-img').css({
-  //     'background-position': '50% ' + st / -5 + 'px'
-  //   });
-  // }
+
+  if (st > $('.quote-img').offset().top - $(window).height()) {
+    $('.quote-img').css({
+      'background-position': 'center ' + -(st-2100)/5 + 'px'
+    });
+  }
 
 
   $('.biz').each(function(index, el) {
