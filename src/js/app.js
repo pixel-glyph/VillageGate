@@ -17,7 +17,7 @@ $(window).scroll(function() {
     });
   }
 
-  // parallax scroll effect on quote-img
+  // parallax scroll effect on quote-img when in viewport
   if (st > $('.quote-img').offset().top - $(window).height()) {
     $('.quote-img').css({
       'background-position': 'center ' + -(st-2100)/5 + 'px'
