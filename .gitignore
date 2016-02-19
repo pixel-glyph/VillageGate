@@ -43,3 +43,7 @@ bower_components/
 build/
 public/
 dist/
+
+# Other #
+#################
+notes.txt
