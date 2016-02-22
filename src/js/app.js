@@ -4,24 +4,28 @@ let st,
     lastScrollTop = 0,
     isPassed = false,
     navbarHeight = $('.home-header').outerHeight(),
+    viewportWidth = window.innerWidth,
     $header = $('.home-header');
+
 
 $(window).scroll(function() {
   st = $(this).scrollTop();
 
-  // translate and fade logo until top-img has scrolled by
-  if (st < $('.new').offset().top) {
-    $('.logo').css({
-      'transform': 'translate(0,' + st / 6.5 + '%)',
-      'opacity': 1 - (st / 750)
-    });
-  }
+  if (viewportWidth > 1200) {
+    // translate and fade logo until top-img has scrolled by
+    if (st < $('.new').offset().top) {
+      $('.logo').css({
+        'transform': 'translate(0,' + st / 6.5 + '%)',
+        'opacity': 1 - (st / 750)
+      });
+    }
 
-  // parallax scroll effect on quote-img when in viewport
-  if (st > $('.quote-img').offset().top - $(window).height()) {
-    $('.quote-img').css({
-      'background-position': 'center ' + -(st-2100)/5 + 'px'
-    });
+    // parallax scroll effect on quote-img when in viewport
+    if (st > $('.quote-img').offset().top - $(window).height()) {
+      $('.quote-img').css({
+        'background-position': 'center ' + -(st-2100)/5 + 'px'
+      });
+    }
   }
 
   // land biz elems on page when they are scrolled 20% into the window

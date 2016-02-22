@@ -9,10 +9,10 @@
     opacity: 0.8
     box-shadow: 0 2px 5px rgba(0,0,0,0.8)
     background:
-      image: url(/../img/home-top.jpg)
+      image: url(../img/home-top.jpg)
       size: cover
       position: 78%
-      attachment: fixed
+      attachment: scroll
 
     .logo
       position: absolute
@@ -78,14 +78,13 @@
   .quote-img
     position: relative
     width: 100%
-    height: 50rem
-    transition: all 0.2s ease-out
+    height: 40rem
     background:
-      image: url(/../img/wall-art.jpg)
-      position: center 100px
+      image: url(../img/wall-art-small.jpg)
+      position: center
       repeat: no-repeat
       size: cover
-      attachment: fixed
+      attachment: scroll
 
     p
       position: absolute
@@ -105,7 +104,7 @@
     .map
       height: 40rem
       background:
-        image: url(/../img/gMap.jpg)
+        image: url(../img/gMap.jpg)
         position: center
 
     .hours-social
@@ -186,11 +185,22 @@
 
 
   @media (min-width: 1200px)
+
     .top-img
+      background:
+        attachment: fixed
       .logo
         top: 37%
         left: 20%
         font-size: 9.5rem
+
+    .quote-img
+      height: 50rem
+      transition: all 0.2s cubic-bezier(0.12, 0.62, 0.43, 1)
+      background:
+        image: url(../img/wall-art.jpg)
+        position: center 100px
+        attachment: fixed
 
     .info
       .map
