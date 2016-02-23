@@ -7,6 +7,11 @@ let st,
     viewportWidth = window.innerWidth,
     $header = $('.home-header');
 
+// apply FA class on social icons for bigger size when dislpay width is over 600
+if (viewportWidth > 600) {
+  let icons = Array.from(document.getElementsByClassName('fa-stack'));
+  icons.forEach( elem => elem.className = "fa-stack fa-2x" );
+}
 
 $(window).scroll(function() {
   st = $(this).scrollTop();
