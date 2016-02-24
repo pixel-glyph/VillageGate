@@ -30,7 +30,8 @@
 
   .new
     position: relative
-    width: 90%
+    width: 93%
+    max-width: 115rem
     margin: 5px auto 10rem
     background-color: #fff
     z-index: 2
@@ -44,7 +45,7 @@
 
     hr
       width: 18rem
-      margin: 0 auto
+      margin: 0 auto 45px
 
     .new-biz
       margin: 0
@@ -64,6 +65,9 @@
           opacity: 1
           transform: translateX(0px)
 
+        .brainery
+          height: 35px
+
         a
           text-align: center
 
@@ -71,7 +75,7 @@
           width: 150px
 
         p
-          max-width: 350px
+          max-width: 325px
           margin: 25px auto 0
           text-align: left
 
@@ -118,8 +122,10 @@
 
       .hours
         padding: 0 0 0 2.5rem
+
         h3
           margin: 15px 0 0
+
         p
           margin: 5px 0 10px
           white-space: pre
@@ -147,6 +153,11 @@
         left: 15%
         font-size: 6.4rem
 
+    .new
+      .new-heading
+        width: 36rem
+        font-size: 3.5rem
+
     .info
       .hours
         font-size: 115%
@@ -157,8 +168,16 @@
     .top-img
       background:
         position: 88%
+
       .logo
         font-size: 8rem
+
+    .new
+      .new-biz
+        font-size: 1.8rem
+
+        .biz p
+          max-width: 375px
 
     .info
       display: flex
@@ -184,6 +203,24 @@
 
   @media (min-width: 1024px)
 
+    .new
+      .new-heading
+        width: 47rem
+        font-size: 4.5rem
+
+      .new-biz
+        display: flex
+        flex-wrap: wrap
+
+        .biz
+          margin: 50px auto
+
+          .biz-img
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 112px
+
     .info
       .map
         width: 55rem
@@ -195,6 +232,7 @@
     .top-img
       background:
         attachment: fixed
+
       .logo
         top: 37%
         left: 20%
