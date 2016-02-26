@@ -1,17 +1,29 @@
 
-const $ = require('jquery');
+const $ = require('jquery'),
+      $header = $('.home-header');
+
 let st,
     lastScrollTop = 0,
     isPassed = false,
     navbarHeight = $('.home-header').outerHeight(),
-    viewportWidth = window.innerWidth,
-    $header = $('.home-header');
+    viewportWidth = window.innerWidth;
 
 // apply FA class on social icons for bigger size when dislpay width is over 600
 if (viewportWidth > 600) {
   let icons = Array.from(document.getElementsByClassName('fa-stack'));
   icons.forEach( elem => elem.className = "fa-stack fa-2x" );
 }
+
+// open and close mobile nav on mobile toggle click
+$('.mobile-nav-toggle').click(function() {
+  if ($(this).hasClass('open')) {
+    $(this).removeClass('open');
+    $header.removeClass('open');
+  } else {
+    $(this).addClass('open');
+    $header.addClass('open');
+  }
+});
 
 $(window).scroll(function() {
   st = $(this).scrollTop();
@@ -40,20 +52,22 @@ $(window).scroll(function() {
   });
 
 	// Keep navbar hidden when scrolling down
-	if (st > lastScrollTop && st > navbarHeight) {
-		$header.addClass('nav-up');
-	} else {
-    // When scrolled to top of page, hide header logo
-    // and clear background color
-    if (st === 0) {
-      $header.removeClass('on-screen');
-      $header.removeClass('nav-up');
-      // Scroll Up
-    } else if (st + $(window).height() < $(document).height() && st > navbarHeight) {
-      $header.addClass('on-screen');
-      $header.removeClass('nav-up');
-    }
-	}
+  if (!$header.hasClass('open')) {
+  	if (st > lastScrollTop && st > navbarHeight) {
+  		$header.addClass('nav-up');
+  	} else {
+      // When scrolled to top of page, hide header logo
+      // and clear background color
+      if (st === 0) {
+        $header.removeClass('on-screen');
+        $header.removeClass('nav-up');
+        // Scroll Up
+      } else if (st + $(window).height() < $(document).height() && st > navbarHeight) {
+        $header.addClass('on-screen');
+        $header.removeClass('nav-up');
+      }
+  	}
+  }
 
 	lastScrollTop = st;
 });

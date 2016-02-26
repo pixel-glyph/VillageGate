@@ -11,6 +11,14 @@
 	background-color: rgba(43, 43, 43, 0)
 	transition: all 0.3s ease-in-out
 
+	&.open
+		transform: translateX(-230px)
+		position: fixed
+		background-color: rgba(43, 43, 43, 1)
+
+		.nav-logo
+			opacity: 0
+
 	.nav-logo
 		visibility: hidden
 		width: 265px
@@ -20,6 +28,7 @@
 		font-size: 2.6rem
 		font-weight: 500
 		color: $header-white
+		transition: opacity 0.3s ease-in-out
 
 	.mobile-nav-toggle
 		display: flex
@@ -37,7 +46,7 @@
 			width: 3rem
 			height: 3px
 			background: $header-white
-			transition: all 0.2s ease-in-out
+			transition: all 0.3s ease-in-out
 
 		span::before
 			top: -12px
@@ -45,31 +54,38 @@
 		span::after
 			top: 9px
 
-		&:hover span
-			background: transparent
+		&.open
+			span
+				background: transparent
 
-		&:hover span::before
-			transform: rotate(45deg)
-			top: 0
+		&.open
+			span::before
+				transform: rotate(45deg)
+				top: 0
 
-		&:hover span::after
-			transform: rotate(-45deg)
-			top: -3px
+		&.open
+			span::after
+				transform: rotate(-45deg)
+				top: -3px
 
 	.mobile-nav
-			display: absolute
-			position: fixed
-			top: 0
-			right: 0
-			width: 250px
-			height: 100vh
-			background-color: #39d47c
-			font-family: "Josefin Sans", sans-serif
-			font-size: 2.75rem
-			font-weight: 600
+		display: absolute
+		position: fixed
+		top: 0
+		right: -230px
+		width: 230px
+		height: 100vh
+		background-color: $home-green
+		font-family: "Josefin Sans", sans-serif
+		font-size: 2.75rem
+		font-weight: 600
+
+		ul
+			padding: 0
 
 			li
-				margin: 10px auto
+				margin: 15px 0
+				text-align: center
 				list-style-type: none
 
 				a
@@ -124,13 +140,13 @@
 				margin: 0 1.3rem
 
 
-//------ DYNAMICALLY ADDED CLASSES -------
-.on-screen
+
+&.on-screen
 	position: fixed
 	background-color: rgba(43, 43, 43, 1)
 
 	h1.nav-logo
 		visibility: visible
 
-.nav-up
+&.nav-up
 	top: -90px
