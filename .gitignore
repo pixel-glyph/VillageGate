@@ -41,7 +41,6 @@ bower_components/
 .sass-cache
 *.css.map
 build/
-public/
 dist/
 
 # Other #
