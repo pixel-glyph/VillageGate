@@ -106,8 +106,15 @@
 			padding: 0
 
 			li
+				opacity: 0
+				transform: translateY(-20px)
+				transition: all 0.3s ease-in-out
 				list-style-type: none
 				color: $header-white
+
+				&.appear
+					opacity: 1
+					transform: translateY(0px)
 
 				a
 					text-decoration: none

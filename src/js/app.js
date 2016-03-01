@@ -8,6 +8,25 @@ let st,
     navbarHeight = $('.home-header').outerHeight(),
     viewportWidth = window.innerWidth;
 
+// land logo and wide nav elements on page load
+window.onload = function() {
+  setTimeout( () => {
+    $('.logo').addClass('appear');
+  }, 10);
+
+  setTimeout( () => {
+    $('.wide-nav li').each( (i) => {
+      setTimeout( () => {
+        $('.wide-nav li').eq(i).addClass('appear');
+      }, (700 * (Math.exp(i * 0.14))) - 700);
+    });
+    // after logo lands in, remove transition to allow proper scrolling effects
+    $('.logo').css({
+      'transition' : 'none'
+    });
+  }, 700);
+};
+
 // apply FA class on social icons for bigger size when dislpay width is over 600
 if (viewportWidth > 600) {
   let icons = Array.from(document.getElementsByClassName('fa-stack'));
@@ -34,13 +53,6 @@ $(window).scroll(function() {
       $('.logo').css({
         'transform': 'translate(0,' + st / 6.5 + '%)',
         'opacity': 1 - (st / 750)
-      });
-    }
-
-    // parallax scroll effect on quote-img when in viewport
-    if (st > $('.quote-img').offset().top - $(window).height()) {
-      $('.quote-img').css({
-        'background-position': 'center ' + -(st-2100)/5 + 'px'
       });
     }
   }
