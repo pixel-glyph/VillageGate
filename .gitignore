@@ -42,8 +42,13 @@ bower_components/
 *.css.map
 dist/
 build/
-
-
+public/*
+!public/img
+!public/*.png
+!public/*.ico
+!public/*.json
+!public/*.svg
+!public/*.xml
 
 # Other #
 #################
