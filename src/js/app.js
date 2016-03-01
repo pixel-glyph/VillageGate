@@ -18,7 +18,7 @@ window.onload = function() {
     $('.wide-nav li').each( (i) => {
       setTimeout( () => {
         $('.wide-nav li').eq(i).addClass('appear');
-      }, (700 * (Math.exp(i * 0.14))) - 700);
+      }, (700 * (Math.exp(i * 0.16))) - 700);
     });
     // after logo lands in, remove transition to allow proper scrolling effects
     $('.logo').css({
