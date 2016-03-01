@@ -41,7 +41,14 @@ bower_components/
 .sass-cache
 *.css.map
 build/
-public/
+public/*
+!public/img
+!public/*.png
+!public/*.ico
+!public/*.json
+!public/*.svg
+!public/*.xml
+
 dist/
 
 # Other #
