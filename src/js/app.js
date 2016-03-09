@@ -57,9 +57,9 @@ $(window).scroll(function() {
     }
   }
 
-  // land biz elems on page when they are scrolled 20% into the window
+  // land biz elems on page when they are scrolled 30% into the window
   $('.biz').each( (index, el) => {
-    if (st > $(el).offset().top - ($(window).height() / 1.2))
+    if (st > $(el).offset().top - ($(window).height() / 1.3))
       $(el).addClass('is-showing');
   });
 
