@@ -1,5 +1,6 @@
 
 const $ = require('jquery'),
+      fromPolyfill = require('./polyfills.js'),
       $header = $('.home-header');
 
 let st,
@@ -26,6 +27,8 @@ window.onload = function() {
     });
   }, 700);
 };
+
+if (!Array.from) Array.from = fromPolyfill;
 
 // apply FA class on social icons for bigger size when dislpay width is over 600
 if (viewportWidth > 600) {
