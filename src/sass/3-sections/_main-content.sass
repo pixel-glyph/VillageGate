@@ -34,6 +34,30 @@
   .bottom-line
     margin: 10px 0 0 30px
 
+
+  .about
+    width: 100%
+    height: 600px
+    opacity: 0.75
+    color: white
+    background:
+      image: url(../img/home-about.jpg)
+      size: cover
+      repeat: no-repeat
+      position: center
+
+    article
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      width: 80%
+      height: 100%
+      margin: 0 auto
+      font-family: "Josefin Sans", sans-serif
+      font-size: 1.6rem
+
+
   .new
     position: relative
     width: 93%
@@ -179,6 +203,11 @@
         left: 15%
         font-size: 6.4rem
 
+    .about
+      article
+        width: 55%
+        font-size: 1.8rem
+
     .new
       .new-heading
         width: 37.5rem
@@ -220,6 +249,11 @@
 
 
   @media (min-width: 1024px)
+
+    .about
+      article
+        width: 45%
+        font-size: 2rem
 
     .new
       margin-bottom: 10rem
