@@ -47,6 +47,14 @@ $('.mobile-nav-toggle').click(function() {
   }
 });
 
+// close mobile nav when clicking outside nav
+$('.home-main').on('click', function() {
+  if ($('.mobile-nav-toggle').hasClass('open')) {
+    $('.mobile-nav-toggle').removeClass('open');
+    $header.removeClass('open');
+  }
+});
+
 $(window).scroll(function() {
   st = $(this).scrollTop();
 
