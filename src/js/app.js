@@ -1,7 +1,8 @@
 
 const $ = require('jquery'),
       fromPolyfill = require('./polyfills.js'),
-      $header = $('.home-header');
+      $header = $('.home-header'),
+      $root = $('html, body');
 
 let st,
     lastScrollTop = 0,
@@ -53,6 +54,14 @@ $('.home-main').on('click', function() {
     $('.mobile-nav-toggle').removeClass('open');
     $header.removeClass('open');
   }
+});
+
+// scroll to section of page on anchor click
+$('ul #nav-link-new').on('click', function() {
+  $root.animate({
+    scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+  }, 500);
+  return false;
 });
 
 $(window).scroll(function() {
