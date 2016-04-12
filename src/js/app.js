@@ -39,13 +39,8 @@ if (viewportWidth > 600) {
 
 // open and close mobile nav on mobile toggle click
 $('.mobile-nav-toggle').click(function() {
-  if ($(this).hasClass('open')) {
-    $(this).removeClass('open');
-    $header.removeClass('open');
-  } else {
-    $(this).addClass('open');
-    $header.addClass('open');
-  }
+  $(this).toggleClass('open');
+  $header.toggleClass('open');
 });
 
 // close mobile nav when clicking outside nav
